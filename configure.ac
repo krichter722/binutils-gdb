@@ -3354,6 +3354,11 @@ case " $configdirs " in
     ;;
 esac
 
+AC_CHECK_PROG(PRELINK_CHECK,prelink,prelink)
+if test x"$PRELINK_CHECK" != x"prelink" ; then
+    AC_MSG_ERROR([Please install prelink before building.])
+fi
+
 
 # Host tools.
 NCN_STRICT_CHECK_TOOLS(AR, ar)
